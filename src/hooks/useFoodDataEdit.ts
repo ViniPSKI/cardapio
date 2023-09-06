@@ -1,24 +1,23 @@
-import axios, { AxiosPromise } from "axios"
+import axios, { AxiosPromise } from "axios";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { FoodData } from "../interface/FoodData";
 
 const API_URL = 'http://localhost:8080';
 
-const removeData = async (id: any): AxiosPromise<any> =>{
-    const response = axios.delete(API_URL +'/delete/'+id);
+const putData = async (variables: { id: number; data: FoodData }): Promise<AxiosPromise<any>> => {
+    const { id, data } = variables;
+    const response = await axios.put(API_URL + '/edit/' + id, data);
     return response;
 }
 
-export function useFoodDataRemove(){
+export function useFoodDataEdit() {
     const queryClient = useQueryClient();
 
-    const mutate = useMutation({
-        mutationFn : removeData,
-        retry: 2,
-        onSuccess: ()=>{
+    const mutate = useMutation(putData, {
+        onSettled: () => {
             queryClient.invalidateQueries(['food-data']);
         }
-    })
+    });
 
     return mutate;
-
 }
