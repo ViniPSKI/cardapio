@@ -7,6 +7,7 @@
     border-radius: 8px;
     box-shadow: (100,100,111,0.2) 0px 7px 29px 0px;
     padding: 0;
+    margin-bottom: 15px;
 }
 
 .card img{
@@ -18,4 +19,9 @@
 .card button{
     align-items: center;
     margin-left: 10px;
+}
+
+.card button:hover{
+    transition: 0.3s;
+    background-color: #3a44f8;
 }

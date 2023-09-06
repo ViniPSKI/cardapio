@@ -33,7 +33,7 @@ function App() {
       </div>
       {isModalOpen && <CreateModal closeModal={handleOpenModal}/>}
       <button onClick={handleOpenModal} className="bt-novo">Novo</button>
-      <button onClick={() => removeAll} className="bt-removerTodos">Remover todos</button> 
+      <button onClick={removeAll} className="bt-removerTodos">Remover todos</button> 
     </div>
   )
 }

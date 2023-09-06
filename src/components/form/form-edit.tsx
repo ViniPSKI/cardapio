@@ -59,7 +59,7 @@ export function CreateModalEdit({closeModal, id}: ModalProps){
     return(
         <div className="modal-overlay">
             <div className="modal-body">
-                <h2>Editar o Produto</h2>
+                <h2>Editar o Produto: {title}</h2>
                 <form className="input-container">
                     <Input label="Nome" value={title} updateValue={setTitle} />
                     <Input label="Preço" value={price} updateValue={setPrice} />

@@ -14,7 +14,7 @@
 }
 
 .modal-overlay .modal-body {
-    background-color: rgb(79, 76, 76);
+    background-color: rgb(76, 79, 78);
     padding: 24px;
     height: 60%;
     width: 60%;
@@ -57,6 +57,7 @@
     position: initial;
     width: 100%;
     margin-top: 32px;
+    background-color: #6569b7;
 }
 
 .modal-overlay .modal-body .btn-secondary:hover {
